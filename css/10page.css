@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  background: #0d0d0d;
+  color: #fff;
+   font-family: 'Poppins', sans-serif;
+  margin-top: 110px;
+  padding: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.menu a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.menu li a:hover {
+  color: #ff007f;
+}
+
+/* กลางหมดทุกอย่าง */
+.club-content {
+  text-align: center;
+  padding: 20px 10%;
+}
+
+/* ชื่อคลับ */
+.club-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+  color: #ff007f;
+}
+
+/* รูปคลับ */
+.club-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 25px; /* เว้นระยะจากข้อความ */
+}
+
+/* ข้อความ */
+.club-description p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 35px; /* เว้นระยะจากปุ่ม Social */
+}
+
+/* ปุ่ม Social + Map */
+.club-map-section {
+  text-align: center;
+  margin-bottom: 50px; /* เว้นระยะจาก section ต่อไป */
+}/* ปุ่ม Map / Social */
+.club-map-buttons {
+  display: flex;
+  justify-content: center; /* จัดให้อยู่กลาง */
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+
+/* ปุ่ม Social ด้านบน */
+.top-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+/* ปุ่ม Map / Social */
+.map-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 25px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Hover effect */
+.map-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Social ปุ่มแต่ละ platform */
+.map-btn.fb { background: #1877f2; }
+.map-btn.ig { background: #e1306c; }
+
+/* Map ปุ่ม gradient เหมือนเดิม */
+.bottom-button .map-btn {
+  background: linear-gradient(45deg, #ff007f, #ff4d4d);
+}
+
+
+/* Social ปุ่มแบบโทนเข้ม มีสี platform */
+.social-btn.fb { background: #1877f2; }
+.social-btn.ig { background: #e1306c; }
+.social-btn:hover { transform: scale(1.05); opacity: 0.9; }
+
+/* Grid 2x2 สำหรับรูปบรรยากาศ */
+.club-photos {
+  margin-top: 50px;
+  text-align: center;
+  padding: 0 10%;
+}
+
+.club-photos h2 {
+  color: #ff007f;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 รูปต่อแถว */
+  gap: 12px;
+}
+
+.photo-grid img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+
+/* ร้านใกล้เคียง */
+.nearby {
+  margin-top: 50px;
+  text-align: center;
+  padding: 0 10%;
+}
+
+.nearby h2 {
+  color: #ff007f;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.nearby h4 {
+  color: #ff007f;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.nearby-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.nearby-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nearby-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255, 0, 127, 0.2);
+}
+
+.nearby-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.nearby-card p {
+  color: #ccc;
+  font-weight: 500;
+}
+

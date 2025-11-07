@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  background: #0d0d0d;
+  color: #fff;
+   font-family: 'Poppins', sans-serif;
+  margin-top: 110px;
+  padding: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 8px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.navbar .Logo img {
+  display: block;     /* ไม่ให้ img มี space ลอย */
+  height: 90px;       /* กำหนดความสูงคงที่ */
+  width: auto;        /* สัดส่วนไม่บิด */
+}
+
+.menu {
+  display: flex;
+  gap: 20px;          /* ช่องว่างเท่ากัน */
+  list-style: none;
+  align-items: center; /* แนวตั้งตรงกัน */
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.menu li a:hover {
+  color: #ff007f;
+}
+
+
+/* Contact Section */
+.contact {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 40px 20px;
+  text-align: center;
+  background: #111; /* เข้ากับ events / hero section */
+  border-radius: 12px;
+}
+
+.contact h2 {
+  font-size: 2.2rem;
+  color: #ff007f;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+/* Contact Info */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1rem;
+  color: #e0e0e0;
+}
+
+/* Social Links */
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.socials a {
+  text-decoration: none;
+  color: #ff007f;
+  border: 1px solid #ff007f;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.socials a:hover {
+  background: #ff007f;
+  color: #111;
+  transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+  margin-top: 50px;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+  border-top: 1px solid #222;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact h2 {
+    font-size: 1.8rem;
+  }
+  .contact p, .contact-info p {
+    font-size: 0.95rem;
+  }
+  .socials a {
+    padding: 7px 14px;
+    font-size: 0.9rem;
+  }
+}
