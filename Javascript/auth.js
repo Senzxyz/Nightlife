@@ -25,7 +25,7 @@ function handleLogin() {
   
   alert("ล็อกอินสำเร็จ!");
   localStorage.setItem("currentUser", username); // จำผู้ใช้
-  window.location.href = "Front.html";
+  window.location.href = "html/Front.html";
 }
 
 // handle register
@@ -35,5 +35,5 @@ function handleRegister() {
   
   alert("สมัครสมาชิกสำเร็จ!");
   localStorage.setItem("currentUser", username); // จำผู้ใช้
-  window.location.href = "Front.html";
+  window.location.href = "html/Front.html";
 }
