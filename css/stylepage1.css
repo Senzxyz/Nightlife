@@ -44,6 +44,13 @@ body {
   color: #ff007f;
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* ระยะห่างระหว่างพิกัดกับปุ่มล็อกอิน */
+}
+
+
 /* Hero Section */
 .hero {
   position: relative;
@@ -227,4 +234,19 @@ footer {
 
 .fav-btn:focus {
   outline: none;
+}
+
+
+
+/* ล็ฮคอิน */
+.login-btn {
+  background: #ff0077;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+.login-btn:hover {
+  background: #ff3399;
 }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>โปรไฟล์ | BKKNightlife</title>
+  <link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="Front.html" class="logo"> BKKNightlife</a>
+    <ul class="menu">
+      <li><a href="Front.html">Home</a></li>
+      <li><a href="#" id="logoutBtn">ออกจากระบบ</a></li>
+    </ul>
+  </nav>
+
+  <header class="profile-header">
+    <h1>รายการโปรดของคุณ</h1>
+  </header>
+
+  <section class="favorites">
+    <div id="fav-list" class="card-grid"></div>
+  </section>
+
+  <script src="/Javascript/profile.js" defer></script>
+  <script>
+    // ปุ่มออกจากระบบ
+    const logoutBtn = document.getElementById("logoutBtn");
+    logoutBtn.addEventListener("click", () => {
+      localStorage.removeItem("currentUser");       // ลบผู้ใช้ปัจจุบัน
+      window.location.href = "Front.html";          // กลับหน้า Home
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>เข้าสู่ระบบ | BKKNightlife</title>
+  <link rel="stylesheet" href="/css/stylelogin.css">
+</head>
+<body>
+  <div class="auth-box">
+    <div class="form-toggle">
+      <button id="loginBtn" class="active">เข้าสู่ระบบ</button>
+      <button id="registerBtn">สมัครสมาชิก</button>
+    </div>
+
+    <!-- ฟอร์มเข้าสู่ระบบ -->
+    <div id="loginForm" class="form active">
+      <h2>เข้าสู่ระบบ</h2>
+      <input type="text" id="login-username" placeholder="ชื่อผู้ใช้">
+      <input type="password" id="login-password" placeholder="รหัสผ่าน">
+      <button onclick="handleLogin()">เข้าสู่ระบบ</button>
+    </div>
+
+    <!-- ฟอร์มสมัครสมาชิก -->
+    <div id="registerForm" class="form">
+      <h2>สมัครสมาชิก</h2>
+      <input type="text" id="register-username" placeholder="ชื่อผู้ใช้">
+      <input type="email" id="register-email" placeholder="อีเมล">
+      <input type="password" id="register-password" placeholder="รหัสผ่าน">
+      <button onclick="handleRegister()">สมัครสมาชิก</button>
+    </div>
+  </div>
+
+  <script src="/Javascript/auth.js"></script>
+</body>
+</html>

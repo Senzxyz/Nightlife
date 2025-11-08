@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #0d0d0d;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ff007f;
+  text-decoration: none;
+}
+
+.navbar .menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar .menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar .menu li a:hover {
+  color: #ff007f;
+}
+
+/* Profile Header */
+.profile-header {
+  text-align: center;
+  padding: 60px 10px 20px 10px;
+}
+
+.profile-header h1 {
+  font-size: 2.5rem;
+  color: #ff4d88;
+}
+
+/* Favorites Section */
+.favorites {
+  padding: 40px 10%;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255,0,127,0.3);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card .info {
+  padding: 15px;
+}
+
+.card .info h3 {
+  font-size: 1.2rem;
+  color: #ff007f;
+}
+
+.card .info p {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+/* Logout Button */
+#logoutBtn {
+  cursor: pointer;
+  padding: 8px 16px;
+  background: #ff007f;
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+#logoutBtn:hover {
+  background: #ff3399;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,26 +1,48 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+  const currentUser = localStorage.getItem("currentUser"); // ใครล็อกอินอยู่
+  // if (!currentUser) {
+  //   // ถ้าไม่ล็อกอิน disable ปุ่มกดใจ
+  //   document.querySelectorAll(".fav-btn").forEach(btn => {
+  //     btn.disabled = true;
+  //     btn.title = "ล็อกอินก่อนกดใจร้านนี้";
+  //   });
+  //   return; // ออก
+  // }
 
-  // event delegation: ฟังคลิกที่ container
+    // ถ้าไม่ล็อกอิน ให้แจ้งเตือนเวลากดใจ
+  if (!currentUser) {
+    document.querySelectorAll(".fav-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        alert("กรุณาเข้าสู่ระบบก่อนกดใจร้านนี้!");
+      });
+    });
+    return; // ออกจากฟังก์ชัน ไม่ต้องโหลด favorites
+  }
+
+  // โหลด favorites ของ user นี้
+  let allFavs = JSON.parse(localStorage.getItem("userFavorites")) || {};
+  let favorites = allFavs[currentUser] || [];
+
   const container = document.querySelector(".card-grid");
+
   container.addEventListener("click", e => {
     if (e.target.classList.contains("fav-btn")) {
       const btn = e.target;
       const name = btn.dataset.name;
 
       if (favorites.includes(name)) {
-        // ลบออก
         favorites = favorites.filter(item => item !== name);
         btn.textContent = "🤍";
         btn.classList.remove("active");
       } else {
-        // เพิ่มเข้า favorites
         favorites.push(name);
         btn.textContent = "❤️";
         btn.classList.add("active");
       }
 
-      localStorage.setItem("favorites", JSON.stringify(favorites));
+      // อัปเดต localStorage สำหรับ user นี้
+      allFavs[currentUser] = favorites;
+      localStorage.setItem("userFavorites", JSON.stringify(allFavs));
     }
   });
 
