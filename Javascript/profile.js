@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const currentUser = localStorage.getItem("currentUser");
   if (!currentUser) {
-    window.location.href = "login.html"; // ถ้าไม่ได้ล็อกอิน ให้ไปหน้า login
+    window.location.href = "/Nightlife/Launch/login.html"; // ถ้าไม่ได้ล็อกอิน ให้ไปหน้า login
     return;
   }
 

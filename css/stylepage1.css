@@ -8,7 +8,7 @@
 }
 
 body {
-  background: #0d0d0d;
+  background: #282828;
   color: #fff;
 }
 
@@ -249,4 +249,48 @@ footer {
 }
 .login-btn:hover {
   background: #ff3399;
+}
+
+
+
+/* คอนแทคของหน้าฟร้อน */
+.newletter_social {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 100px 50px;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px 0;
+  font-family: sans-serif;
+}
+
+.newletter_social li {
+  text-align: left;
+}
+
+.newletter_title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #e55a40;
+  margin-bottom: 10px;
+}
+
+.newletter_contact {
+  font-size: 18px;
+  color: #9c9999;
+  text-decoration: none;
+}
+
+.newletter_contact:hover {
+  text-decoration: underline;
+}
+
+.bgHead {
+  cursor: pointer;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: repeat(auto-fit);
 }
