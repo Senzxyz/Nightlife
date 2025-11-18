@@ -288,9 +288,85 @@ footer {
   text-decoration: underline;
 }
 
-.bgHead {
-  cursor: pointer;
-  background-color: #fff;
-  display: grid;
-  grid-template-columns: repeat(auto-fit);
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
+
+.popup-box {
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 18px;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.popup-box button {
+  margin-top: 10px;
+  padding: 6px 15px;
+  border: none;
+  background: #333;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+/* === Theme Styles ===
+body.light {
+  background: #f7f7f7;
+  color: #222;
+}
+
+body.light .navbar {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+body.light .menu li a {
+  color: #222;
+}
+
+body.light .menu li a:hover {
+  color: #ff007f;
+}
+
+body.light .card {
+  background: #fff;
+  color: #222;
+}
+
+body.light .events {
+  background: #f0f0f0;
+}
+
+body.light footer {
+  background: #eee;
+  color: #444;
+}
+
+.bgHead {
+  background: #ff007f;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.bgHead:hover {
+  background: #ff3399;
+} */

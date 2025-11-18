@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
   const currentUser = localStorage.getItem("currentUser"); // ใครล็อกอินอยู่
-  if (!currentUser) {
-    // ถ้าไม่ล็อกอิน disable ปุ่มกดใจ
-    document.querySelectorAll(".fav-btn").forEach(btn => {
-      btn.disabled = true;
-      btn.title = "ล็อกอินก่อนกดใจร้านนี้";
-    });
-    return; // ออก
-  }
+  // if (!currentUser) {
+  //   // ถ้าไม่ล็อกอิน disable ปุ่มกดใจ
+  //   document.querySelectorAll(".fav-btn").forEach(btn => {
+  //     btn.disabled = true;
+  //     btn.title = "ล็อกอินก่อนกดใจร้านนี้";
+  //   });
+  //   return; // ออก
+  // }
 
     // ถ้าไม่ล็อกอิน ให้แจ้งเตือนเวลากดใจ
   if (!currentUser) {

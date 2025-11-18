@@ -28,6 +28,7 @@ function handleLogin() {
   window.location.href = "/Nightlife/Launch/Front.html";
 }
 
+
 // handle register
 function handleRegister() {
   const username = document.getElementById("register-username").value;
