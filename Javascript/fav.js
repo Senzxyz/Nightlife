@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6f65253d74b32c3460bdc3a2d2b7cf27bcf2dbf8
 document.addEventListener("DOMContentLoaded", () => {
   const currentUser = localStorage.getItem("currentUser");
   const popup = document.getElementById("popup-notice");
