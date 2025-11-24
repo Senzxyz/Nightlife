@@ -1,0 +1,20 @@
+.popup-notice {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  background: #ff0077;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  z-index: 9999;
+}
+
+.popup-notice.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}

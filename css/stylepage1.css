@@ -47,9 +47,8 @@ body {
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 15px; /* ระยะห่างระหว่างพิกัดกับปุ่มล็อกอิน */
+  gap: 15px;
 }
-
 
 /* Hero Section */
 .hero {
@@ -122,11 +121,14 @@ body {
   gap: 25px;
 }
 
+/* ---- รวม .card ให้เหลือบล็อกเดียว ---- */
 .card {
   background: #1a1a1a;
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s ease;
+  position: relative;
+  padding-bottom: 40px; 
 }
 
 .card:hover {
@@ -135,7 +137,7 @@ body {
 
 .card img {
   width: 100%;
-  height: 180px;
+  height: 220px;
   object-fit: cover;
 }
 
@@ -157,18 +159,36 @@ body {
   display: block;
 }
 
-.card a img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  /* border-bottom: 2px solid #ff007f; */
-  transition: transform 0.3s ease;
+/* Fav button */
+.fav-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.3s ease;
 }
 
-/* .card:hover a img {
-  transform: scale(1.05);
-} */
+.fav-btn:hover {
+  transform: translateX(-50%) scale(1.1);
+}
 
+.fav-btn.bump {
+  animation: bump 0.3s ease;
+}
+
+@keyframes bump {
+  0% { transform: translateX(-50%) scale(1); }
+  40% { transform: translateX(-50%) scale(1.3); }
+  100% { transform: translateX(-50%) scale(1); }
+}
+
+.fav-btn:focus {
+  outline: none;
+}
 
 /* Stats Section */
 .stats {
@@ -200,45 +220,7 @@ footer {
   border-top: 1px solid #222;
 }
 
-.card {
-  position: relative; /* ต้องมี เพื่อให้ปุ่มอยู่ภายในกรอบ */
-    padding-bottom: 40px;
-}
-
-/* ปุ่ม Fav อยู่ด้านล่างกลางกรอบ */
-.fav-btn {
-  position: absolute;
-  bottom: 10px;   /* จากขอบล่างรูป */
-  left: 50%;       /* อยู่กลางแนวนอน */
-  transform: translateX(-50%); /* ปรับให้อยู่ตรงกลางจริงๆ */
-  background: none;
-  border: none;
-  font-size: 26px;
-  cursor: pointer;
-  transition: transform 0.2s ease, color 0.3s ease;
-}
-
-.fav-btn:hover {
-  transform: translateX(-50%) scale(1.1); /* scale พร้อมอยู่กลาง */
-}
-
-.fav-btn.bump {
-  animation: bump 0.3s ease;
-}
-
-@keyframes bump {
-  0% { transform: translateX(-50%) scale(1); }
-  40% { transform: translateX(-50%) scale(1.3); }
-  100% { transform: translateX(-50%) scale(1); }
-}
-
-.fav-btn:focus {
-  outline: none;
-}
-
-
-
-/* ล็ฮคอิน */
+/* Login button */
 .login-btn {
   background: #ff0077;
   color: white;
@@ -251,24 +233,16 @@ footer {
   background: #ff3399;
 }
 
-
-
-/* คอนแทคของหน้าฟร้อน */
+/* Contact Social */
 .newletter_social {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 100px 50px;
   max-width: 900px;
-  margin: auto;
   padding: 20px 0;
-  font-family: sans-serif;
-}
-
-.newletter_social li {
-  text-align: left;
 }
 
 .newletter_title {
@@ -288,85 +262,23 @@ footer {
   text-decoration: underline;
 }
 
-.popup {
+.popup-notice {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgba(0,0,0,0.5);
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-
-.popup-box {
-  background: #fff;
-  padding: 20px 25px;
-  border-radius: 10px;
-  text-align: center;
-  font-size: 18px;
-  animation: fadeIn 0.2s ease;
-}
-
-@keyframes fadeIn {
-  from { transform: scale(0.9); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-.popup-box button {
-  margin-top: 10px;
-  padding: 6px 15px;
-  border: none;
-  background: #333;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  background: #ff0077;
   color: #fff;
-  border-radius: 6px;
-  cursor: pointer;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  z-index: 9999;
 }
 
-
-/* === Theme Styles ===
-body.light {
-  background: #f7f7f7;
-  color: #222;
+.popup-notice.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
 }
-
-body.light .navbar {
-  background: rgba(255, 255, 255, 0.7);
-}
-
-body.light .menu li a {
-  color: #222;
-}
-
-body.light .menu li a:hover {
-  color: #ff007f;
-}
-
-body.light .card {
-  background: #fff;
-  color: #222;
-}
-
-body.light .events {
-  background: #f0f0f0;
-}
-
-body.light footer {
-  background: #eee;
-  color: #444;
-}
-
-.bgHead {
-  background: #ff007f;
-  color: white;
-  padding: 8px 14px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.bgHead:hover {
-  background: #ff3399;
-} */

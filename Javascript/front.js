@@ -8,9 +8,3 @@ document.addEventListener("DOMContentLoaded", () => {
     loginBtnNav.href = "/Nightlife/Launch/profile.html";      // ลิงก์ไปหน้าโปรไฟล์
   }
 });
-
-// const bgHead = document.getElementById(`bgHead`)
-
-// bgHead.addEventListener(`click`,function(){
-//       bgHead.style.backgroundColor = "#fff";
-// });
