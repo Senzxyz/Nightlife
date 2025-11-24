@@ -26,12 +26,16 @@
     </div>
 
     <!-- ฟอร์มเข้าสู่ระบบ -->
-    <div id="loginForm" class="form active">
-      <h2>เข้าสู่ระบบ</h2>
-      <input type="text" id="login-username" placeholder="ชื่อผู้ใช้">
-      <input type="password" id="login-password" placeholder="รหัสผ่าน">
-      <button onclick="handleLogin()">เข้าสู่ระบบ</button>
-    </div>
+     <div class="loginFrame">
+       <div id="loginForm" class="form active">
+         <h2>เข้าสู่ระบบ</h2>
+         <b class="input-title">user</b>
+         <input type="text" id="login-username" placeholder="ชื่อผู้ใช้">
+         <b class="input-title">password</b>
+         <input type="password" id="login-password" placeholder="รหัสผ่าน">
+         <button onclick="handleLogin()">เข้าสู่ระบบ</button>
+       </div>
+     </div>
 
     <!-- ฟอร์มสมัครสมาชิก -->
     <div id="registerForm" class="form">
