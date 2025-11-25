@@ -6,48 +6,65 @@
   <link rel="stylesheet" href="/Nightlife/css/stylelogin.css">
   <link rel="stylesheet" href="/Nightlife/css/popup.css">
 </head>
+
 <body>
 
   <nav class="navbar">
-    <a href="Front.html" class="Logo"> <img src="Nllogo.png" width="120" height="80"></a>
+    <a href="Front.html" class="Logo">
+      <img src="Nllogo.png" width="120" height="80">
+    </a>
     <ul class="menu">
       <li><a href="Front.html">Home</a></li>
       <li><a href="club.html">Club</a></li>
       <li><a href="bar.html">Bar</a></li>
       <li><a href="BkkEx.html">Activity</a></li>
-      <li><a href="contact.html">Contact</a></li> 
+      <li><a href="contact.html">Contact</a></li>
     </ul>
-    </nav>
-    
-  <div class="auth-box">
-    <div class="form-toggle">
-      <button id="loginBtn" class="active">เข้าสู่ระบบ</button>
-      <button id="registerBtn">สมัครสมาชิก</button>
+  </nav>
+
+  <!-- กล่องใหญ่สองฝั่ง -->
+  <div class="auth-wrapper">
+
+    <!-- ฝั่งซ้ายโลโก้/ข้อความ -->
+    <div class="left-box">
+      <img src="Nllogo.png" class="left-logo">
+      <h1>BKKNightlife</h1>
+      <p>เข้าสู่ระบบเพื่อเลือกร้านโปรดของคุณ</p>
     </div>
 
-    <!-- ฟอร์มเข้าสู่ระบบ -->
-     <div class="loginFrame">
-       <div id="loginForm" class="form active">
-         <h2>เข้าสู่ระบบ</h2>
-         <b class="input-title">user</b>
-         <input type="text" id="login-username" placeholder="ชื่อผู้ใช้">
-         <b class="input-title">password</b>
-         <input type="password" id="login-password" placeholder="รหัสผ่าน">
-         <button onclick="handleLogin()">เข้าสู่ระบบ</button>
-       </div>
-     </div>
+    <!-- ฝั่งขวาฟอร์ม -->
+    <div class="auth-box">
+      <div class="form-toggle">
+        <button id="loginBtn" class="active">เข้าสู่ระบบ</button>
+        <button id="registerBtn">สมัครสมาชิก</button>
+      </div>
 
-    <!-- ฟอร์มสมัครสมาชิก -->
-    <div id="registerForm" class="form">
-      <h2>สมัครสมาชิก</h2>
-      <input type="text" id="register-username" placeholder="ชื่อผู้ใช้">
-      <input type="email" id="register-email" placeholder="อีเมล">
-      <input type="password" id="register-password" placeholder="รหัสผ่าน">
-      <button onclick="handleRegister()">สมัครสมาชิก</button>
+      <!-- Login -->
+      <div id="loginForm" class="form active">
+        <h2>เข้าสู่ระบบ</h2>
+        <b class="input-title">ชื่อผู้ใช้</b>
+        <input type="text" id="login-username" placeholder="ชื่อผู้ใช้">
+
+        <b class="input-title">รหัสผ่าน</b>
+        <input type="password" id="login-password" placeholder="รหัสผ่าน">
+
+        <button class="main-btn" onclick="handleLogin()">เข้าสู่ระบบ</button>
+      </div>
+
+      <!-- Register -->
+      <div id="registerForm" class="form">
+        <h2>สมัครสมาชิก</h2>
+        <input type="text" id="register-username" placeholder="ชื่อผู้ใช้">
+        <input type="email" id="register-email" placeholder="อีเมล">
+        <input type="password" id="register-password" placeholder="รหัสผ่าน">
+        <button class="main-btn" onclick="handleRegister()">สมัครสมาชิก</button>
+      </div>
+
     </div>
   </div>
 
   <div id="popup-notice" class="popup-notice"></div>
   <script src="/Nightlife/Javascript/auth.js"></script>
+
 </body>
 </html>

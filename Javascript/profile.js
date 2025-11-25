@@ -1,14 +1,23 @@
+// ทำงานเมื่อโหลดหน้าเสร็จ
 document.addEventListener("DOMContentLoaded", () => {
+
+  // เช็คว่ามี user ล็อกอินไหม
   const currentUser = localStorage.getItem("currentUser");
+
+  // ถ้าไม่มี → เด้งกลับไปหน้า login ทันที
   if (!currentUser) {
-    window.location.href = "/Nightlife/Launch/login.html"; // ถ้าไม่ได้ล็อกอิน ให้ไปหน้า login
-    return;
+    window.location.href = "/Nightlife/Launch/login.html";
+    return; // หยุดการทำงานต่อ
   }
 
+  // element ที่จะเอารายการโปรดมาแปะลง
   const favList = document.getElementById("fav-list");
-  if (!favList) return;
+  if (!favList) return; // กัน error
 
+  // โหลด favorites ทั้งหมดของทุก user
   let allFavs = JSON.parse(localStorage.getItem("userFavorites")) || {};
+
+  // เอาเฉพาะของ user ปัจจุบัน
   let favorites = allFavs[currentUser] || [];
 
 const allPlaces = [
@@ -19,7 +28,7 @@ const allPlaces = [
       { name: "Nuss Bar", img: "https://images.squarespace-cdn.com/content/v1/62c819a227d9d8533ee1287e/aed5db6d-646a-47c4-a33b-4a983b969aee/NSR_HIRES-009.JPG", link: "#" },
       { name: "Muin Bangkok", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/6b/83/b7/muin-bangkok-nightclub.jpg?w=1400&h=800&s=1", link: "#" },
       { name: "OnxyClub", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/53/c0/ca/onyx.jpg?w=1000&h=600&s=1", link: "#" },
-      { name: "Sugar Club bkk", img: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/17/02/66/00.jpg", link: "#" },
+      { name: "Sugar Club", img: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/17/02/66/00.jpg", link: "#" },
       { name: "Aces Nightclub", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/8a/af/ab/the-heart-of-aces-with.jpg?w=1100&h=600&s=1", link: "#" },
       { name: "Nana Plaza Bangkok", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/7a/24/05/1c-trip-to-bangkok-completely.jpg?w=1400&h=800&s=1", link: "#" },
       { name: "Escape Bangkok", img: "https://images.hungryhub.com/uploads/restaurants/4750/photos/164973/RackMultipart20250318-136-1n7l5wj.jpg", link: "#" },
@@ -31,20 +40,26 @@ const allPlaces = [
       
     
     ];
+ // หาร้านที่ user ชอบจริง ๆ โดยเช็คจาก favorites
   const favPlaces = allPlaces.filter(p =>
     favorites.includes(p.name)
   );
 
+  // เคลียร์ list ก่อน
   favList.innerHTML = "";
 
+  // ถ้าไม่มีร้านในรายการโปรดเลย
   if (favPlaces.length === 0) {
-    favList.innerHTML = "<p style='color:#fff;text-align:center;'>ยังไม่มีร้านในรายการโปรด</p>";
+    favList.innerHTML =
+      "<p style='color:#fff;text-align:center;'>ยังไม่มีร้านในรายการโปรด</p>";
     return;
   }
 
+  // วนสร้าง card ของแต่ละร้านที่ user กดใจไว้
   favPlaces.forEach(place => {
     const card = document.createElement("div");
     card.classList.add("card");
+
     card.innerHTML = `
       <a href="${place.link}">
         <img src="${place.img}" alt="${place.name}">
@@ -54,6 +69,7 @@ const allPlaces = [
         <p>ร้านนี้อยู่ในรายการโปรดของคุณ</p>
       </div>
     `;
-    favList.appendChild(card);
+
+    favList.appendChild(card); // แปะ card ลงหน้าเว็บ
   });
 });
