@@ -23,11 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
 const allPlaces = [
       { name: "Tube groove", img: "https://img.wongnai.com/p/1920x0/2023/12/18/136d60ddba5344a3985b90ceb69867be.jpg", link: "#" },
       { name: "Rustyปิ่นเกล้า", img: "https://res.theconcert.com/c_thumb/ced5864cb7de05378eba8a4303d41adcc/26.jpg", link: "#" },
-      { name: "Philter room", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBqr--V84DQNXWufnK-A6fTn2g91nH_y7IXg&s", link: "#" },
+      { name: "Philter room", img: "https://res.theconcert.com/c_thumb/355e321dd554b9924c16788005e9fa117/dsc_7032.jpg", link: "#" },
       { name: "Roof Mate", img: "https://img.salehere.co.th/p/1200x0/2024/02/05/7a0cb400c3d411eea8510d990d0f361fjpeg-xm36wxaaa7ka.jpg", link: "#" },
       { name: "Nuss Bar", img: "https://images.squarespace-cdn.com/content/v1/62c819a227d9d8533ee1287e/aed5db6d-646a-47c4-a33b-4a983b969aee/NSR_HIRES-009.JPG", link: "#" },
       { name: "Muin Bangkok", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/6b/83/b7/muin-bangkok-nightclub.jpg?w=1400&h=800&s=1", link: "#" },
       { name: "OnxyClub", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/53/c0/ca/onyx.jpg?w=1000&h=600&s=1", link: "#" },
+      { name: "MuinClub", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/6b/83/b7/muin-bangkok-nightclub.jpg?w=1400&h=800&s=1", link: "#" },
       { name: "Sugar Club", img: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/17/02/66/00.jpg", link: "#" },
       { name: "Aces Nightclub", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/8a/af/ab/the-heart-of-aces-with.jpg?w=1100&h=600&s=1", link: "#" },
       { name: "Nana Plaza Bangkok", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/7a/24/05/1c-trip-to-bangkok-completely.jpg?w=1400&h=800&s=1", link: "#" },
@@ -37,9 +38,11 @@ const allPlaces = [
       { name: "JoddFair", img:"https://res.klook.com/image/upload/activities/sunjdetyd77mj0a5h98b.jpg" ,link:"#"},
       { name: "kaosanroad", img:"https://www.agoda.com/wp-content/uploads/2019/10/Featured-photo-Khao-San-Road-at-night.jpg" ,link:"#"},
       { name: "topgolf", img:"https://siam2nite.media/L4Rs9UVflyKedLQQa9p2xAcfiBI=/1280x/smart/filters:quality(60)/magazine/stories/856/da399fa73a77bcacc1ee62b5db473667.jpg" ,link:"#"},
+      { name: "Havencocktailbar", img:"https://lh3.googleusercontent.com/p/AF1QipMmjtUPfV2UJYPmReMSne11GX_6fAFFxTJEAsrR=s1360-w1360-h1020" ,link:"#"},
       
     
     ];
+    
  // หาร้านที่ user ชอบจริง ๆ โดยเช็คจาก favorites
   const favPlaces = allPlaces.filter(p =>
     favorites.includes(p.name)
